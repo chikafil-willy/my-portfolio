@@ -31,5 +31,3 @@ It includes an admin panel powered by Supabase for managing project data dynamic
 > This repository is for demonstration purposes only.
 
 
-# 4️⃣ Start the development server
-npm run dev
