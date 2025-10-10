@@ -1,0 +1,228 @@
+/* Global styles */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  animation: backgroundChange 18s infinite;
+  transition: background-image 1s ease-in-out;
+}
+
+/* Animate between 3 local background images */
+@keyframes backgroundChange {
+  0% {
+    background-image: url('/back.jpg');
+  }
+  33% {
+    background-image: url('/back3.jpg');
+  }
+  66% {
+    background-image: url('/back3.jpg');
+  }
+  100% {
+    background-image: url('/back.jpg');
+  }
+}
+
+a {
+  text-decoration: none;
+  transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+/* Navbar styles */
+.navbar {
+  background-color: #111;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: flex-start;
+  gap: 2rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.nav-link {
+  color: #ffffff;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #00bfff;
+  text-decoration: underline;
+}
+
+/* Page layout */
+.page-container {
+  padding: 2rem;
+  max-width: 1000px;
+  margin: auto;
+}
+
+/* Projects section */
+.projects-container {
+  margin-top: 2rem;
+}
+
+.project-card {
+  background-color: #ffffff;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-radius: 10px;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+}
+
+.project-card a {
+  color: #007bff;
+  font-weight: 500;
+}
+
+.project-card a:hover {
+  text-decoration: underline;
+  color: #0056b3;
+}
+
+/* Contact form */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  max-width: 500px;
+  margin-top: 2rem;
+}
+
+input, textarea {
+  padding: 0.75rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+  transform: scale(1.02);
+}
+/* Navbar container */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #222;
+  padding: 1rem 1.5rem;
+  position: relative;
+}
+
+/* Home link is always visible */
+.home-link {
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* Hamburger button (hidden by default) */
+.hamburger {
+  background: none;
+  color: #fff;
+  font-size: 1.5rem;
+  border: none;
+  cursor: pointer;
+  display: none;
+}
+
+/* Navigation menu */
+.nav-menu {
+  display: flex;
+  gap: 1.2rem;
+}
+
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-menu {
+    position: absolute;
+    top: 100%;
+    right: 1rem;
+    background-color: #333;
+    flex-direction: column;
+    padding: 1rem;
+    border-radius: 8px;
+    display: none;
+    z-index: 10;
+  }
+
+  .nav-menu.open {
+    display: flex;
+  }
+}
+.footer {
+  background-color: #2e3b4e;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.linkedin-logo {
+  width: 30px;
+  height: 30px;
+  transition: transform 0.3s ease;
+}
+
+.linkedin-logo:hover {
+  transform: scale(1.1);
+}
+
+.contact-info p {
+  margin: 4px 0;
+  font-size: 14px;
+}
+
+.footer-copy {
+  margin-top: 10px;
+  font-size: 13px;
+  color: #ccc;
+}
