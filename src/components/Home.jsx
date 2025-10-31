@@ -1,10 +1,11 @@
 import React from "react";
+import profilePic from "../assets/profile.png";
 
 const Home = () => {
 
   const bio = {
     name: "Chika Williams",
-    years_active: "3+ years",
+    years_active: "2+ years",
     description: "Passionate Full Stack Developer, building modern web apps."
   };
 
@@ -16,7 +17,7 @@ const Home = () => {
     "Node.js",
     "Express",
     "Supabase",
-    "Web3" // added
+    "Web3"
   ];
 
   const services = [
@@ -24,27 +25,14 @@ const Home = () => {
     "E-commerce Solutions",
     "Portfolio Websites",
     "Site Maintenance & Upgrades",
-    "Web3 Integration" // added
+    "Web3 Integration"
   ];
 
   const projects = [
-    {
-      title: "V6ix Collection",
-      description: "An e-commerce store built with React and Supabase."
-    },
-    {
-      title: "Portfolio Site",
-      description: "A personal portfolio site showcasing projects and skills."
-    },
-    {
-      title: "Olea MamaCare",
-      description: "A modern and responsive consultancy website built with raect and supabase"
-    },
-    {
-      title: "Global News Aggregator",
-      description: "A dynamic news web app that uses API to fetch and display various newspapers headlines."
-    },
-    
+    { title: "V6ix Collection", description: "An e-commerce store built with React and Supabase." },
+    { title: "Portfolio Site", description: "A personal portfolio site showcasing projects and skills." },
+    { title: "Olea MamaCare", description: "A modern and responsive consultancy website built with React and Supabase." },
+    { title: "Global News Aggregator", description: "A dynamic news web app that fetches and displays top headlines." },
   ];
 
   // -----------------------
@@ -69,22 +57,53 @@ const Home = () => {
   const projectTitleStyle = { margin: "0 0 0.5rem 0", color: "#0077b6" };
   const projectDescStyle = { margin: 0, color: "#333" };
 
+  // 🔹 Scrolling header styles
+  const scrollingHeaderContainer = {
+    overflow: "hidden",
+    whiteSpace: "nowrap",
+    background: "#023e8a",
+    color: "white",
+    fontWeight: "bold",
+    fontSize: "0.7rem",
+    padding: "0.5rem 0",
+    marginBottom: "2rem",
+    borderRadius: "8px",
+    boxShadow: "0 2px 10px rgba(0,0,0,0.2)",
+  };
+
+  const scrollingHeaderText = {
+    display: "inline-block",
+    paddingLeft: "129%",
+    animation: "scrollLeft 12s linear infinite",
+  };
+
+  // 🔹 Add both animations (projects scroll + header scroll)
   const styleSheet = `
     @keyframes scrollUp {
       0% { transform: translateY(0%); }
       100% { transform: translateY(-50%); }
     }
+
+    @keyframes scrollLeft {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-100%); }
+    }
   `;
 
-  const scrollingProjects = [...projects, ...projects]; // duplicate for seamless scroll
+  const scrollingProjects = [...projects, ...projects];
 
   return (
     <div style={containerStyle}>
       <style>{styleSheet}</style>
 
+      {/* 🔹 SCROLLING HEADER */}
+      <div style={scrollingHeaderContainer}>
+        <div style={scrollingHeaderText}>Turning your ideas into beautiful digital experiences🚀</div>
+      </div>
+
       {/* BIO */}
       <section style={bioStyle}>
-        <img src="https://via.placeholder.com/150" alt="Profile" style={profileImageStyle} />
+        <img src={profilePic} alt="Profile" style={profileImageStyle} />
         <h1 style={nameStyle}>{bio.name}</h1>
         <p style={{ color: "#023e8a" }}>Years Active: {bio.years_active}</p>
         <p>{bio.description}</p>
