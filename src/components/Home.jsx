@@ -1,23 +1,135 @@
-import React, { useEffect, useState } from "react";
-import { supabase } from "../supabaseClient";
+import React from "react";
 
 const Home = () => {
-  const [content, setContent] = useState(null);
+  // -----------------------
+  // Dummy data
+  // -----------------------
+  const bio = {
+    name: "Chika Williams",
+    years_active: "2 years",
+    description: "Passionate Full Stack Developer, building modern web apps."
+  };
 
-  useEffect(() => {
-    const fetchHomeContent = async () => {
-      const { data, error } = await supabase.from("home_content").select("*").limit(1).single();
-      if (!error) setContent(data);
-    };
-    fetchHomeContent();
-  }, []);
+  const techStack = [
+    "React",
+    "JavaScript",
+    "CSS",
+    "HTML",
+    "Node.js",
+    "Express",
+    "Supabase",
+    "Web3" // added
+  ];
 
-  if (!content) return <p>Loading...</p>;
+  const services = [
+    "Web Development",
+    "E-commerce Solutions",
+    "Portfolio Websites",
+    "React + Supabase Apps",
+    "Site Maintenance & Upgrades",
+    "Web3 Integration" // added
+  ];
+
+  const projects = [
+    {
+      title: "V6ix Collection",
+      description: "An e-commerce store built with React and Supabase."
+    },
+    {
+      title: "Portfolio Site",
+      description: "A personal portfolio site showcasing projects and skills."
+    },
+    {
+      title: "Football Prediction App",
+      description: "A sports predictions app with subscription-based features."
+    },
+    {
+      title: "Chat App",
+      description: "A real-time social chat application using React."
+    },
+    {
+      title: "Blog Platform",
+      description: "A modern blogging platform with React and Node."
+    }
+  ];
+
+  // -----------------------
+  // Inline styles
+  // -----------------------
+  const containerStyle = { padding: "2rem", fontFamily: "Arial, sans-serif", color: "#333" };
+  const bioStyle = { textAlign: "center", marginBottom: "3rem" };
+  const nameStyle = { fontWeight: "bold", fontSize: "2.5rem", marginBottom: "0.5rem", color: "#0077b6" };
+  const profileImageStyle = { width: "150px", height: "150px", borderRadius: "50%", objectFit: "cover", marginBottom: "1rem" };
+  const sectionStyle = { marginBottom: "3rem" };
+  const headerStyle = { color: "#023e8a" };
+
+  const techListStyle = { display: "flex", flexWrap: "wrap", gap: "0.8rem", justifyContent: "center" };
+  const techItemStyle = { background: "#ade8f4", padding: "0.5rem 1rem", borderRadius: "10px", fontWeight: "bold", color: "#023e8a" };
+
+  const servicesListStyle = { listStyle: "none", padding: 0, display: "flex", flexDirection: "column", gap: "0.6rem" };
+  const serviceItemStyle = { background: "#caf0f8", padding: "0.5rem 1rem", borderRadius: "8px", color: "#03045e", fontWeight: "500" };
+
+  const projectsContainerStyle = { height: "300px", overflow: "hidden", border: "1px solid #ccc", borderRadius: "8px", position: "relative" };
+  const projectsScrollStyle = { display: "flex", flexDirection: "column", animation: "scrollUp 20s linear infinite" };
+  const projectCardStyle = { padding: "1rem", borderBottom: "1px solid #ddd" };
+  const projectTitleStyle = { margin: "0 0 0.5rem 0", color: "#0077b6" };
+  const projectDescStyle = { margin: 0, color: "#333" };
+
+  const styleSheet = `
+    @keyframes scrollUp {
+      0% { transform: translateY(0%); }
+      100% { transform: translateY(-50%); }
+    }
+  `;
+
+  const scrollingProjects = [...projects, ...projects]; // duplicate for seamless scroll
 
   return (
-    <div>
-      <h1>{content.title}</h1>
-      <p>{content.intro}</p>
+    <div style={containerStyle}>
+      <style>{styleSheet}</style>
+
+      {/* BIO */}
+      <section style={bioStyle}>
+        <img src="https://via.placeholder.com/150" alt="Profile" style={profileImageStyle} />
+        <h1 style={nameStyle}>{bio.name}</h1>
+        <p style={{ color: "#023e8a" }}>Years Active: {bio.years_active}</p>
+        <p>{bio.description}</p>
+      </section>
+
+      {/* TECH STACK */}
+      <section style={sectionStyle}>
+        <h2 style={headerStyle}>Tech Stack</h2>
+        <div style={techListStyle}>
+          {techStack.map((tech, index) => (
+            <span key={index} style={techItemStyle}>{tech}</span>
+          ))}
+        </div>
+      </section>
+
+      {/* SERVICES */}
+      <section style={sectionStyle}>
+        <h2 style={headerStyle}>Services</h2>
+        <ul style={servicesListStyle}>
+          {services.map((service, index) => (
+            <li key={index} style={serviceItemStyle}>{service}</li>
+          ))}
+        </ul>
+      </section>
+
+      {/* PROJECTS SCROLLING */}
+      <section style={sectionStyle}>
+        <h2 style={headerStyle}>Projects</h2>
+        <div style={projectsContainerStyle}>
+          <div style={projectsScrollStyle}>
+            {scrollingProjects.map((project, index) => (
+              <div key={index} style={projectCardStyle}>
+                <h3 style={projectTitleStyle}>{project.title}</h3>
+                <p style={projectDescStyle}>{project.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
     </div>
   );
 };
