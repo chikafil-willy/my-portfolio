@@ -1,12 +1,10 @@
 import React from "react";
 
 const Home = () => {
-  // -----------------------
-  // Dummy data
-  // -----------------------
+
   const bio = {
     name: "Chika Williams",
-    years_active: "2 years",
+    years_active: "3+ years",
     description: "Passionate Full Stack Developer, building modern web apps."
   };
 
@@ -25,7 +23,6 @@ const Home = () => {
     "Web Development",
     "E-commerce Solutions",
     "Portfolio Websites",
-    "React + Supabase Apps",
     "Site Maintenance & Upgrades",
     "Web3 Integration" // added
   ];
@@ -40,17 +37,14 @@ const Home = () => {
       description: "A personal portfolio site showcasing projects and skills."
     },
     {
-      title: "Football Prediction App",
-      description: "A sports predictions app with subscription-based features."
+      title: "Olea MamaCare",
+      description: "A modern and responsive consultancy website built with raect and supabase"
     },
     {
-      title: "Chat App",
-      description: "A real-time social chat application using React."
+      title: "Global News Aggregator",
+      description: "A dynamic news web app that uses API to fetch and display various newspapers headlines."
     },
-    {
-      title: "Blog Platform",
-      description: "A modern blogging platform with React and Node."
-    }
+    
   ];
 
   // -----------------------
