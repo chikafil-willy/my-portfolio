@@ -25,7 +25,8 @@ const Home = () => {
     "E-commerce Solutions",
     "Portfolio Websites",
     "Site Maintenance & Upgrades",
-    "Web3 Integration"
+    "Web3 Integration",
+    "Search Engine Optimization(SEO)"
   ];
 
   const projects = [
@@ -33,9 +34,8 @@ const Home = () => {
     { title: "Portfolio Site", description: "A personal portfolio site showcasing projects and skills." },
     { title: "Olea MamaCare", description: "A modern and responsive consultancy website built with React and Supabase." },
     { title: "Global News Aggregator", description: "A dynamic news web app that fetches and displays top headlines."},
-    { title: "mssharonclawz", description: "A a modern e-commerce store offering a curated collection of stylish apparel and accessories with a sleek, user-friendly interface"}
-    
-     ,
+    { title: "mssharonclawz", description: "A modern e-commerce store offering a curated collection of stylish apparel and accessories with a sleek, user-friendly interface"}
+    ,
   ];
 
 
