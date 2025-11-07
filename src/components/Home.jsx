@@ -32,8 +32,12 @@ const Home = () => {
     { title: "V6ix Collection", description: "An e-commerce store built with React and Supabase." },
     { title: "Portfolio Site", description: "A personal portfolio site showcasing projects and skills." },
     { title: "Olea MamaCare", description: "A modern and responsive consultancy website built with React and Supabase." },
-    { title: "Global News Aggregator", description: "A dynamic news web app that fetches and displays top headlines." },
+    { title: "Global News Aggregator", description: "A dynamic news web app that fetches and displays top headlines."},
+    { title: "mssharonclawz", description: "A a modern e-commerce store offering a curated collection of stylish apparel and accessories with a sleek, user-friendly interface"}
+    
+     ,
   ];
+
 
   // -----------------------
   // Inline styles
