@@ -2,23 +2,14 @@ import React from "react";
 import profilePic from "../assets/profile.png";
 
 const Home = () => {
-
   const bio = {
     name: "Chika Williams",
-    years_active: "2+ years",
-    description: "Passionate Full Stack Developer, building modern web apps."
+    years_active: "2+ Years",
+    description:
+      "Full Stack Developer specializing in building fast, modern and scalable digital experiences.",
   };
 
-  const techStack = [
-    "React",
-    "JavaScript",
-    "CSS",
-    "HTML",
-    "Node.js",
-    "Express",
-    "Supabase",
-    "Web3"
-  ];
+  const techStack = ["React","JavaScript","CSS","HTML","Node.js","Express","Supabase","Web3"];
 
   const services = [
     "Web Development",
@@ -26,122 +17,146 @@ const Home = () => {
     "Portfolio Websites",
     "Site Maintenance & Upgrades",
     "Web3 Integration",
-    "Search Engine Optimization(SEO)"
+    "SEO Optimization",
   ];
 
   const projects = [
-    { title: "V6ix Collection", description: "An e-commerce store built with React and Supabase." },
-    { title: "Portfolio Site", description: "A personal portfolio site showcasing projects and skills." },
-    { title: "Olea MamaCare", description: "A modern and responsive consultancy website built with React and Supabase." },
-    { title: "Global News Aggregator", description: "A dynamic news web app that fetches and displays top headlines."},
-    { title: "mssharonclawz", description: "A modern e-commerce store offering a curated collection of stylish apparel and accessories with a sleek, user-friendly interface"}
-    ,
+    { title: "V6ix Collection", description: "A modern e-commerce store built with React + Supabase." },
+    { title: "Portfolio Site", description: "A beautiful personal portfolio showcasing skills & projects." },
+    { title: "Olea MamaCare", description: "A responsive consultancy website built with React + Supabase." },
+    { title: "News Aggregator", description: "A web app that fetches & displays breaking news globally." },
+    { title: "mssharonclawz", description: "A classy fashion e-commerce store with a smooth UI/UX." },
   ];
-
-
-  // -----------------------
-  // Inline styles
-  // -----------------------
-  const containerStyle = { padding: "2rem", fontFamily: "Arial, sans-serif", color: "#333" };
-  const bioStyle = { textAlign: "center", marginBottom: "3rem" };
-  const nameStyle = { fontWeight: "bold", fontSize: "2.5rem", marginBottom: "0.5rem", color: "#0077b6" };
-  const profileImageStyle = { width: "150px", height: "150px", borderRadius: "50%", objectFit: "cover", marginBottom: "1rem" };
-  const sectionStyle = { marginBottom: "3rem" };
-  const headerStyle = { color: "#023e8a" };
-
-  const techListStyle = { display: "flex", flexWrap: "wrap", gap: "0.8rem", justifyContent: "center" };
-  const techItemStyle = { background: "#ade8f4", padding: "0.5rem 1rem", borderRadius: "10px", fontWeight: "bold", color: "#023e8a" };
-
-  const servicesListStyle = { listStyle: "none", padding: 0, display: "flex", flexDirection: "column", gap: "0.6rem" };
-  const serviceItemStyle = { background: "#caf0f8", padding: "0.5rem 1rem", borderRadius: "8px", color: "#03045e", fontWeight: "500" };
-
-  const projectsContainerStyle = { height: "300px", overflow: "hidden", border: "1px solid #ccc", borderRadius: "8px", position: "relative" };
-  const projectsScrollStyle = { display: "flex", flexDirection: "column", animation: "scrollUp 20s linear infinite" };
-  const projectCardStyle = { padding: "1rem", borderBottom: "1px solid #ddd" };
-  const projectTitleStyle = { margin: "0 0 0.5rem 0", color: "#0077b6" };
-  const projectDescStyle = { margin: 0, color: "#333" };
-
-  // 🔹 Scrolling header styles
-  const scrollingHeaderContainer = {
-    overflow: "hidden",
-    whiteSpace: "nowrap",
-    background: "#023e8a",
-    color: "white",
-    fontWeight: "bold",
-    fontSize: "0.7rem",
-    padding: "0.5rem 0",
-    marginBottom: "2rem",
-    borderRadius: "8px",
-    boxShadow: "0 2px 10px rgba(0,0,0,0.2)",
-  };
-
-  const scrollingHeaderText = {
-    display: "inline-block",
-    paddingLeft: "129%",
-    animation: "scrollLeft 12s linear infinite",
-  };
-
-  // 🔹 Add both animations (projects scroll + header scroll)
-  const styleSheet = `
-    @keyframes scrollUp {
-      0% { transform: translateY(0%); }
-      100% { transform: translateY(-50%); }
-    }
-
-    @keyframes scrollLeft {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-100%); }
-    }
-  `;
 
   const scrollingProjects = [...projects, ...projects];
 
+  // STYLES
+  const heroSection = {
+    padding: "4rem 2rem",
+    background: "linear-gradient(135deg, #00253D, #004B73, #0096C7)",
+    color: "white",
+    textAlign: "center",
+    borderBottomLeftRadius: "50px",
+    borderBottomRightRadius: "50px",
+  };
+
+  const heroImage = {
+    width: "160px",
+    height: "160px",
+    borderRadius: "50%",
+    objectFit: "cover",
+    border: "4px solid white",
+    marginBottom: "1rem",
+    boxShadow: "0 4px 20px rgba(0,0,0,0.3)",
+  };
+
+  const heroTitle = { fontSize: "2.5rem", fontWeight: "bold" };
+  const heroSub = { opacity: 0.9, marginTop: "0.5rem", marginBottom: "1rem" };
+  const heroText = { maxWidth: "600px", margin: "0 auto", opacity: 0.9, lineHeight: 1.6 };
+
+  const section = { padding: "3rem 2rem", textAlign: "center" };
+  const sectionHeader = { fontSize: "2rem", marginBottom: "1.5rem", color: "#004B73" };
+
+  const techList = { display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "1rem" };
+  const techItem = {
+    background: "#D9F3FF",
+    padding: "0.6rem 1.2rem",
+    borderRadius: "12px",
+    fontWeight: "bold",
+    color: "#005A87",
+    boxShadow: "0 2px 6px rgba(0,0,0,0.1)",
+  };
+
+  const servicesGrid = {
+    display: "grid",
+    gridTemplateColumns: window.innerWidth > 768 ? "1fr 1fr 1fr" : "1fr",
+    gap: "1rem",
+    maxWidth: "900px",
+    margin: "0 auto",
+  };
+  const serviceCard = {
+    background: "#F1FBFF",
+    padding: "1rem",
+    borderRadius: "10px",
+    fontWeight: "bold",
+    color: "#003A57",
+    boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
+  };
+
+  const projectsHero = {
+    padding: "2rem",
+    margin: "2rem 0",
+    background: "linear-gradient(135deg, #004B73, #0077B6)",
+    borderRadius: "20px",
+    color: "white",
+    textAlign: "center",
+  };
+
+  const projectsContainer = {
+    height: "280px",
+    overflow: "hidden",
+    borderRadius: "12px",
+    marginTop: "1rem",
+    background: "rgba(255,255,255,0.1)",
+    backdropFilter: "blur(6px)",
+  };
+  const projectsScroll = {
+    display: "flex",
+    flexDirection: "column",
+    animation: "scrollUp 18s linear infinite",
+  };
+  const projectCard = { padding: "1rem", borderBottom: "1px solid rgba(255,255,255,0.3)" };
+  const projectTitle = { margin: "0 0 0.3rem 0", color: "#fff", fontWeight: "bold" };
+  const projectDesc = { margin: 0, opacity: 0.9, color: "#E0F6FF" };
+
+  const styleSheet = `
+    @keyframes scrollUp {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-50%); }
+    }
+  `;
+
   return (
-    <div style={containerStyle}>
+    <div style={{ fontFamily: "Arial, sans-serif", color: "#00253D", padding: 0, margin: 0 }}>
       <style>{styleSheet}</style>
 
-      {/* 🔹 SCROLLING HEADER */}
-      <div style={scrollingHeaderContainer}>
-        <div style={scrollingHeaderText}>Turning your ideas into beautiful digital experiences🚀</div>
-      </div>
-
-      {/* BIO */}
-      <section style={bioStyle}>
-        <img src={profilePic} alt="Profile" style={profileImageStyle} />
-        <h1 style={nameStyle}>{bio.name}</h1>
-        <p style={{ color: "#023e8a" }}>Years Active: {bio.years_active}</p>
-        <p>{bio.description}</p>
+      {/* TOP HERO */}
+      <section style={heroSection}>
+        <img src={profilePic} alt="Profile" style={heroImage} />
+        <h1 style={heroTitle}>{bio.name}</h1>
+        <p style={heroSub}>Full Stack Developer • {bio.years_active}</p>
+        <p style={heroText}>{bio.description}</p>
       </section>
 
       {/* TECH STACK */}
-      <section style={sectionStyle}>
-        <h2 style={headerStyle}>Tech Stack</h2>
-        <div style={techListStyle}>
-          {techStack.map((tech, index) => (
-            <span key={index} style={techItemStyle}>{tech}</span>
+      <section style={section}>
+        <h2 style={sectionHeader}>Tech Stack</h2>
+        <div style={techList}>
+          {techStack.map((t, i) => (
+            <span key={i} style={techItem}>{t}</span>
           ))}
         </div>
       </section>
 
       {/* SERVICES */}
-      <section style={sectionStyle}>
-        <h2 style={headerStyle}>Services</h2>
-        <ul style={servicesListStyle}>
-          {services.map((service, index) => (
-            <li key={index} style={serviceItemStyle}>{service}</li>
+      <section style={section}>
+        <h2 style={sectionHeader}>Services</h2>
+        <div style={servicesGrid}>
+          {services.map((s, i) => (
+            <div key={i} style={serviceCard}>{s}</div>
           ))}
-        </ul>
+        </div>
       </section>
 
-      {/* PROJECTS SCROLLING */}
-      <section style={sectionStyle}>
-        <h2 style={headerStyle}>Projects</h2>
-        <div style={projectsContainerStyle}>
-          <div style={projectsScrollStyle}>
-            {scrollingProjects.map((project, index) => (
-              <div key={index} style={projectCardStyle}>
-                <h3 style={projectTitleStyle}>{project.title}</h3>
-                <p style={projectDescStyle}>{project.description}</p>
+      {/* SCROLLING PROJECTS HERO */}
+      <section style={projectsHero}>
+        <h2 style={{ fontSize: "2rem", marginBottom: "1rem" }}>Projects</h2>
+        <div style={projectsContainer}>
+          <div style={projectsScroll}>
+            {scrollingProjects.map((p, i) => (
+              <div key={i} style={projectCard}>
+                <h3 style={projectTitle}>{p.title}</h3>
+                <p style={projectDesc}>{p.description}</p>
               </div>
             ))}
           </div>
