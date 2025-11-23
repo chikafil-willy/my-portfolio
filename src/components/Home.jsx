@@ -117,7 +117,7 @@ const Home = () => {
   `;
 
   return (
-    <div style={{ fontFamily: "Arial, sans-serif", color: "#00253D", padding: 0, margin: 0 }}>
+    <div style={{ fontFamily: "Arial, sans-serif", backgroundColor: "black", color: "#00253D", padding: 0, margin: 0 }}>
       <style>{styleSheet}</style>
 
       {/* TOP HERO */}
