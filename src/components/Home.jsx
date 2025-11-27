@@ -1,5 +1,12 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import profilePic from "../assets/profile.png";
+import hero1 from "../assets/hero1.jpg";
+import hero2 from "../assets/hero2.jpg";
+import hero3 from "../assets/hero3.jpg";
+import hero4 from "../assets/hero4.jpg";
+import hero5 from "../assets/hero5.jpg";
+import hero6 from "../assets/hero6.jpg";
+import hero7 from "../assets/hero7.jpg";
 
 const Home = () => {
   const bio = {
@@ -9,7 +16,7 @@ const Home = () => {
       "Full Stack Developer specializing in building fast, modern and scalable digital experiences.",
   };
 
-  const techStack = ["React","JavaScript","CSS","HTML","Node.js","Express","Supabase","Web3"];
+  const techStack = ["React","JavaScript","CSS","HTML","Node.js","Express","Firebase","Supabase","Web3"];
 
   const services = [
     "Web Development",
@@ -21,7 +28,7 @@ const Home = () => {
   ];
 
   const projects = [
-    { title: "V6ix Collection", description: "A modern e-commerce store built with React + Supabase." },
+    { title: "V6ix Collection", description: "A modern e-commerce store built with React + Supabase + Firebase." },
     { title: "Portfolio Site", description: "A beautiful personal portfolio showcasing skills & projects." },
     { title: "Olea MamaCare", description: "A responsive consultancy website built with React + Supabase." },
     { title: "News Aggregator", description: "A web app that fetches & displays breaking news globally." },
@@ -29,6 +36,17 @@ const Home = () => {
   ];
 
   const scrollingProjects = [...projects, ...projects];
+
+  // NEW HERO SECTION STATE
+  const heroImages = [hero1, hero2, hero3, hero4, hero5, hero6, hero7];
+  const [currentHero, setCurrentHero] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentHero((prev) => (prev + 1) % heroImages.length);
+    }, 5000); // 5s interval
+    return () => clearInterval(interval);
+  }, []);
 
   // STYLES
   const heroSection = {
@@ -132,9 +150,7 @@ const Home = () => {
       <section style={section}>
         <h2 style={sectionHeader}>Tech Stack</h2>
         <div style={techList}>
-          {techStack.map((t, i) => (
-            <span key={i} style={techItem}>{t}</span>
-          ))}
+          {techStack.map((t, i) => <span key={i} style={techItem}>{t}</span>)}
         </div>
       </section>
 
@@ -142,13 +158,11 @@ const Home = () => {
       <section style={section}>
         <h2 style={sectionHeader}>Services</h2>
         <div style={servicesGrid}>
-          {services.map((s, i) => (
-            <div key={i} style={serviceCard}>{s}</div>
-          ))}
+          {services.map((s, i) => <div key={i} style={serviceCard}>{s}</div>)}
         </div>
       </section>
 
-      {/* SCROLLING PROJECTS HERO */}
+      {/* SCROLLING PROJECTS */}
       <section style={projectsHero}>
         <h2 style={{ fontSize: "2rem", marginBottom: "1rem" }}>Projects</h2>
         <div style={projectsContainer}>
@@ -161,6 +175,29 @@ const Home = () => {
             ))}
           </div>
         </div>
+      </section>
+
+      {/* NEW HERO SECTION WITH HERO1 → HERO7 */}
+      <section style={{ height: "400px", margin: "3rem 0", overflow: "hidden", position: "relative", borderRadius: "20px" }}>
+        {heroImages.map((img, i) => (
+          <img
+            key={i}
+            src={img}
+            alt={`Hero ${i + 1}`}
+            style={{
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              position: "absolute",
+              top: 0,
+              left: 0,
+              transform: "scale(1)",
+              transition: "opacity 1s ease-in-out, transform 5s ease-in-out",
+              opacity: i === currentHero ? 1 : 0,
+              transform: i === currentHero ? "scale(1.1)" : "scale(1)",
+            }}
+          />
+        ))}
       </section>
     </div>
   );
