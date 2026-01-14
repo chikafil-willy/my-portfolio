@@ -6,7 +6,7 @@ const Projects = () => {
       id: 1,
       title: "BlockLuxScan",
       description:
-        "BlockLuxScan is a product authentication and digital receipt system designed to combat counterfeit goods. It leverages cryptographic hashing to uniquely verify products, ensuring authenticity and traceability. The platform generates tamper-proof digital receipts and allows users to validate products in real time through a secure verification process.",
+        "BlockLuxScan is a product authentication and digital receipt system designed to combat counterfeit goods. It leverages Qrcode and cryptographic hashing to uniquely verify products, ensuring authenticity and traceability. The platform generates tamper-proof digital receipts and allows users to validate products in real time through a secure verification process.",
       stack: "React, Firebase, Express.js, Cryptographic Hashing",
       link: "https://www.blockluxscan.com/", // add link when ready
     },

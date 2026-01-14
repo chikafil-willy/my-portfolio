@@ -6,14 +6,13 @@ import hero3 from "../assets/hero3.jpg";
 import hero4 from "../assets/hero4.jpg";
 import hero5 from "../assets/hero5.jpg";
 import hero6 from "../assets/hero6.jpg";
-import hero7 from "../assets/hero7.jpg";
 
 const Home = () => {
   const bio = {
     name: "Chika Williams",
     years_active: "3+ Years",
     description:
-      "Full Stack Developer & Cybersecurity Consultant focused on building fast, modern, scalable and secure web applications.",
+      "Full Stack Developer & Cybersecurity Consultant (web apps) focused on building fast, modern, scalable and secure web applications.",
   };
 
   const techStack = [
@@ -22,10 +21,13 @@ const Home = () => {
     "CSS",
     "HTML",
     "Node.js",
-    "Express",
+    "Expressjs",
     "Firebase",
     "Supabase",
     "Web3",
+    "OWASP ZAP",
+    "Splunk SIEM",
+    "Dev Tools",
   ];
 
   const services = [
@@ -33,7 +35,7 @@ const Home = () => {
     "E-commerce Solutions",
     "Portfolio Websites",
     "Site Maintenance & Upgrades",
-    "Web3 Integration",
+    "Web3 Wallet Integration",
     "SEO Optimization",
     "Web Application Security",
     "Security Audits & Hardening",
@@ -46,10 +48,13 @@ const Home = () => {
     { title: "Olea MamaCare", description: "A responsive consultancy website built with React + Supabase." },
     { title: "News Aggregator", description: "A web app that fetches & displays breaking news globally." },
     { title: "mssharonclawz", description: "A classy fashion e-commerce store with a smooth UI/UX." },
+    { title: "Blockluxscan", description: "A product authenticator and digital receipt software that utilizes Qrcode and cryptographic hashing. Built with Firebase, React, and Express.js." },
   ];
 
   const scrollingProjects = [...projects, ...projects];
-  const heroImages = [hero1, hero2, hero3, hero4, hero5, hero6, hero7];
+  
+  // HERO IMAGES (hero7 removed)
+  const heroImages = [hero1, hero2, hero3, hero4, hero5, hero6];
   const [currentHero, setCurrentHero] = useState(0);
 
   useEffect(() => {
